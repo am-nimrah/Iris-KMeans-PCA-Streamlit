@@ -8,13 +8,17 @@ from sklearn.datasets import load_iris
 from sklearn.preprocessing import StandardScaler
 import streamlit as st
 
+# Author and Organization Information
+st.markdown("<h1 style='text-align: center;'>Iris Flower Clustering using K-Means and PCA</h1>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center;'>Author: Nimra Waqar</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center;'>Organization: The Sparks Foundation</h5>", unsafe_allow_html=True)
+
 # Load Iris dataset
 iris = load_iris()
 df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 df['species'] = iris.target
 
 # Streamlit UI
-st.title("Iris Flower Clustering using K-Means and PCA")
 st.write("This project demonstrates the application of K-Means clustering on the Iris dataset with PCA for dimensionality reduction.")
 
 # Display dataset
@@ -80,4 +84,3 @@ st.download_button(label="Download CSV", data=csv, file_name='iris_clusters.csv'
 
 # Summary
 st.write("In this project, we applied K-Means clustering to classify Iris flowers based on their features, and used PCA to visualize the clusters. We used the elbow method to find the optimal number of clusters (k=3). The centroids of each cluster were also highlighted in the PCA plot.")
-
